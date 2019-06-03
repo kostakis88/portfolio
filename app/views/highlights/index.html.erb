@@ -1,0 +1,8 @@
+<h1>Portfolio Items</h1>
+
+<% @highlights.each do |highlight| %>
+    <p><%= highlight.title %></p>
+    <p><%= highlight.subtitle %></p>
+    <p><%= highlight.body %></p>
+    <%= image_tag highlight.thumb_image %>
+<% end %>
