@@ -4,5 +4,5 @@
     <p><%= highlight.title %></p>
     <p><%= highlight.subtitle %></p>
     <p><%= highlight.body %></p>
-    <%= image_tag highlight.thumb_image %>
+    <%= image_tag highlight.thumb_image unless highlight.thumb_image.nil? %>
 <% end %>
