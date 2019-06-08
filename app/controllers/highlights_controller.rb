@@ -18,4 +18,21 @@ class HighlightsController < ApplicationController
           end
         end
     end
+
+    def edit
+      @highlight = Highlight.find(params[:id])
+    end
+
+    def update
+      @highlight = Highlight.find(params[:id])
+      
+      respond_to do |format|
+        if @highlight.update(params.require(:highlight).permit(:title, :subtitle, :body))
+          format.html { redirect_to highlights_path, notice: 'Portfolio item was successfully updated.' }
+        else
+          format.html { render :edit }
+        end
+      end
+    end
+
 end
