@@ -1,8 +1,11 @@
 <h1>Portfolio Items</h1>
 
+<%= link_to "Create New Item", new_highlight_url %>
+
 <% @highlights.each do |highlight| %>
     <p><%= highlight.title %></p>
     <p><%= highlight.subtitle %></p>
     <p><%= highlight.body %></p>
     <%= image_tag highlight.thumb_image unless highlight.thumb_image.nil? %>
+    <%= link_to "Edit", edit_highlight_path(highlight.id) %>
 <% end %>
