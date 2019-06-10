@@ -25,7 +25,7 @@ class HighlightsController < ApplicationController
 
     def update
       @highlight = Highlight.find(params[:id])
-      
+
       respond_to do |format|
         if @highlight.update(params.require(:highlight).permit(:title, :subtitle, :body))
           format.html { redirect_to highlights_path, notice: 'Portfolio item was successfully updated.' }
@@ -33,6 +33,21 @@ class HighlightsController < ApplicationController
           format.html { render :edit }
         end
       end
+    end
+
+    def show
+      @highlight = Highlight.find(params[:id])
+    end
+
+    def destroy
+      @highlight = Highlight.find(params[:id])
+
+      @highlight.destroy
+
+      respond_to do |format|
+        format.html { redirect_to highlights_url, notice: 'Portfolio item was successfully destroyed.' }
+      end
+
     end
 
 end
