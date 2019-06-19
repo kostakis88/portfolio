@@ -58,3 +58,12 @@ end
 end
 
 puts "9 Highlights created"
+
+3.times do |technology|
+    Technology.create!(
+        name: "Technology #{technology}",
+        highlight_id: Highlight.last.id
+    )
+end
+
+puts "3 Technologies created"
