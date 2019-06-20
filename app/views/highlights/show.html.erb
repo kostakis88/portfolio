@@ -5,3 +5,8 @@
 <em><%= @highlight.subtitle %></em>
 
 <p><%= @highlight.body %></p>
+
+<h2>Technologies Used:</h2>
+<% @highlight.technologies.each do |t| %>
+    <p><%= t.name %></p>
+<% end %>
