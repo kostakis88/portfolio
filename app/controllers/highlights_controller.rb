@@ -5,10 +5,11 @@ class HighlightsController < ApplicationController
 
     def new
         @highlight = Highlight.new
+        3.times { @highlight.technologies.build }
     end
 
     def create
-        @highlight = Highlight.new(params.require(:highlight).permit(:title, :subtitle, :body))
+        @highlight = Highlight.new(params.require(:highlight).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
     
         respond_to do |format|
           if @highlight.save
