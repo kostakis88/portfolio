@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :highlights, except: [:show]
   get 'highlights/:id', to: 'highlights#show', as: 'highlight_show'
 
