@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   resources :highlights, except: [:show]
   get 'highlights/:id', to: 'highlights#show', as: 'highlight_show'
 
