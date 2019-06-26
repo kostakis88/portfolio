@@ -9,7 +9,7 @@ class HighlightsController < ApplicationController
     end
 
     def create
-        @highlight = Highlight.new(params.require(:highlight).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
+        @highlight = Highlight.new(highlight_params)
     
         respond_to do |format|
           if @highlight.save
@@ -28,7 +28,7 @@ class HighlightsController < ApplicationController
       @highlight = Highlight.find(params[:id])
 
       respond_to do |format|
-        if @highlight.update(params.require(:highlight).permit(:title, :subtitle, :body))
+        if @highlight.update(highlight_params)
           format.html { redirect_to highlights_path, notice: 'Portfolio item was successfully updated.' }
         else
           format.html { render :edit }
@@ -49,6 +49,15 @@ class HighlightsController < ApplicationController
         format.html { redirect_to highlights_url, notice: 'Portfolio item was successfully destroyed.' }
       end
 
+    end
+
+    private
+
+    def highlight_params
+      params.require(:highlight).permit(:title,
+                                        :subtitle, 
+                                        :body, 
+                                        technologies_attributes: [:name])
     end
 
 end
