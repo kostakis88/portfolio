@@ -1,0 +1,6 @@
+<p><%= link_to highlight.title, highlight_path(highlight) %></p>
+<p><%= highlight.subtitle %></p>
+<p><%= highlight.body %></p>
+<%= image_tag highlight.thumb_image unless highlight.thumb_image.nil? %>
+<%= link_to "Edit", edit_highlight_path(highlight) %>
+<%= link_to "Delete", highlight_path(highlight), method: :delete, data: { confirm: 'Are you sure?' } %>
