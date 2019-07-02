@@ -1,4 +1,6 @@
 class HighlightsController < ApplicationController
+    before_action :set_highlight, only: [:edit, :update, :show, :destroy] 
+
     def index
         @highlights = Highlight.all
     end
@@ -21,12 +23,9 @@ class HighlightsController < ApplicationController
     end
 
     def edit
-      @highlight = Highlight.find(params[:id])
     end
 
     def update
-      @highlight = Highlight.find(params[:id])
-
       respond_to do |format|
         if @highlight.update(highlight_params)
           format.html { redirect_to highlights_path, notice: 'Portfolio item was successfully updated.' }
@@ -37,12 +36,9 @@ class HighlightsController < ApplicationController
     end
 
     def show
-      @highlight = Highlight.find(params[:id])
     end
 
     def destroy
-      @highlight = Highlight.find(params[:id])
-
       @highlight.destroy
 
       respond_to do |format|
@@ -58,6 +54,10 @@ class HighlightsController < ApplicationController
                                         :subtitle, 
                                         :body, 
                                         technologies_attributes: [:name])
+    end
+
+    def set_highlight
+      @highlight = Highlight.find(params[:id])
     end
 
 end
