@@ -1,5 +1,6 @@
 class HighlightsController < ApplicationController
     before_action :set_highlight, only: [:edit, :update, :show, :destroy] 
+    access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
     def index
         @highlights = Highlight.all
