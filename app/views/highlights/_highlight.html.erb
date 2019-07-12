@@ -1,6 +1,11 @@
-<p><%= link_to highlight.title, highlight_path(highlight) %></p>
-<p><%= highlight.subtitle %></p>
-<p><%= highlight.body %></p>
+<div class="col-md-4">
+<div class="card mb-4 shadow-sm">
 <%= image_tag highlight.thumb_image unless highlight.thumb_image.nil? %>
-<%= link_to "Edit", edit_highlight_path(highlight) if logged_in?(:site_admin) %>
-<%= link_to "Delete", highlight_path(highlight), method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>
+  <div class="card-body">
+    <p class="card-text">
+        <span><%= link_to highlight.title, highlight_path(highlight) %></span>
+        <%= highlight.subtitle %>
+    </p>
+  </div>
+</div>
+</div>
