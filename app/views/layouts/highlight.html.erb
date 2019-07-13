@@ -7,13 +7,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'highlights', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= render 'shared/highlights_nav' %>
-    <%= render 'shared/highlights_header' %>
+    <%= render 'shared/highlights_header' unless logged_in?(:site_admin) %>
     <%= yield %>
     <%= render 'shared/highlights_footer' %>
     <%= source_helper %> 
