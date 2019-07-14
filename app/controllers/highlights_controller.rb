@@ -4,7 +4,7 @@ class HighlightsController < ApplicationController
     layout "highlight"
 
     def index
-        @highlights = Highlight.all
+        @highlights = Highlight.by_position
     end
 
     def new
