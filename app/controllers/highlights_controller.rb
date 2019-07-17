@@ -7,6 +7,13 @@ class HighlightsController < ApplicationController
         @highlights = Highlight.by_position
     end
 
+    def sort
+      params[:order].each do |key, value|
+        Highlight.find(value[:id]).update(position: value[:position])
+      end
+      render nothing: true
+    end
+
     def new
         @highlight = Highlight.new
         3.times { @highlight.technologies.build }
