@@ -1,6 +1,6 @@
 <div class="col-md-4">
 <div class="card mb-4 shadow-sm" data-id="<%= highlight.id %>">
-<%= image_tag highlight.thumb_image unless highlight.thumb_image.nil? %>
+<%= image_tag highlight.thumb_image.url unless highlight.thumb_image.nil? %>
   <div class="card-body">
     <p class="card-text">
         <span><%= link_to highlight.title, highlight_path(highlight) %></span>

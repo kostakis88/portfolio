@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container highlight-container">
     <div class="row">
         <div class="col-md-7">
-            <%= image_tag @highlight.main_image %>
+            <%= image_tag @highlight.main_image.url, width: '100%' %>
         </div>
         <div class="col-md-5">
             <h1><%= @highlight.title %></h1>

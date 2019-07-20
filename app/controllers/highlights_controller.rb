@@ -61,7 +61,9 @@ class HighlightsController < ApplicationController
     def highlight_params
       params.require(:highlight).permit(:title,
                                         :subtitle, 
-                                        :body, 
+                                        :body,
+                                        :main_image,
+                                        :thumb_image, 
                                         technologies_attributes: [:name])
     end
 
