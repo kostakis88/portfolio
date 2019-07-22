@@ -16,7 +16,6 @@ class HighlightsController < ApplicationController
 
     def new
         @highlight = Highlight.new
-        3.times { @highlight.technologies.build }
     end
 
     def create
@@ -64,7 +63,7 @@ class HighlightsController < ApplicationController
                                         :body,
                                         :main_image,
                                         :thumb_image, 
-                                        technologies_attributes: [:name])
+                                        technologies_attributes: [:id, :name, :_destroy])
     end
 
     def set_highlight

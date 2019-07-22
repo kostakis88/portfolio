@@ -1,7 +1,7 @@
 <div class="container highlight-container">
     <div class="row">
         <div class="col-md-7">
-            <%= image_tag highlight_img(@highlight.thumb_image.url, 'main') %>
+            <%= image_tag highlight_img(@highlight.main_image.url, 'main') %>
         </div>
         <div class="col-md-5">
             <h1><%= @highlight.title %></h1>
@@ -12,6 +12,10 @@
             <h3>Technologies Used:</h3>
             <% @highlight.technologies.each do |t| %>
                 <p><%= t.name %></p>
+            <% end %>
+
+            <% if logged_in?(:site_admin)%>
+                <%= link_to "Edit Item", edit_highlight_path(@highlight), class: 'btn btn-warning' %>
             <% end %>
         </div>
     </div>
