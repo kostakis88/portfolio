@@ -1,4 +1,9 @@
 <%= form_for(@highlight) do |form| %>
+  <% if @highlight.errors.any? %>
+  <% @highlight.errors.full_messages.each do |error| %>
+    <%= js add_gritter(flash[:notice], title: "Kostas Ntallas Portfolio") %>
+  <% end %>
+<% end %>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
