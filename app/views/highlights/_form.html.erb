@@ -1,7 +1,7 @@
 <%= form_for(@highlight) do |form| %>
   <% if @highlight.errors.any? %>
   <% @highlight.errors.full_messages.each do |error| %>
-    <%= js add_gritter(flash[:notice], title: "Kostas Ntallas Portfolio") %>
+    <%= alert_generator error %>
   <% end %>
 <% end %>
   <div class="row">
