@@ -42,6 +42,10 @@ module ApplicationHelper
                 url: highlights_path,
                 title: 'Highlights'
             },
+            {
+                url: tech_news_path,
+                title: 'Tech News'
+            },
         ]
     end
 
