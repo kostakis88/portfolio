@@ -120,6 +120,7 @@
    */
   .blog-footer {
     padding: 2.5rem 0;
+    margin-top: 20px;
     color: #999;
     text-align: center;
     background-color: #f9f9f9;
@@ -139,5 +140,18 @@
 .blog-nav {
   span {
     padding: 0.5rem;
+  }
+}
+
+.comment-card {
+  .card {
+    margin-top: 15px;
+  }
+  .comment-details {
+    font-size: .8em;
+    font-style: italic;
+  }
+  .comment-name {
+    font-weight: bold;
   }
 }
