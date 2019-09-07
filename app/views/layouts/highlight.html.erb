@@ -16,7 +16,6 @@
     <%= render 'shared/highlights_header' unless logged_in?(:site_admin) %>
     <%= yield %>
     <%= render 'shared/highlights_footer' %>
-    <%= alerts %>
-    <%= source_helper %> 
+    <%= alerts %> 
   </body>
 </html>
