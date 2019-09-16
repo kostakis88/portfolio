@@ -11,5 +11,20 @@
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
+
+        <div calss="skills">
+            <% @skills.each do |skill| %>
+             <h4><%= skill.title %></h4>
+             <div class="progress">
+             <div
+                class="progress-bar progress-bar-stripped bg-warning"
+                role="progress-bar"
+                aria-valuenow="<%= skill.percent_utilized %>"
+                aria-valuemax="100"
+                style="width: <%= skill.percent_utilized %>%"
+             ></div>             
+             </div>
+            <% end %>
+        </div>
     </div>
 </div>
