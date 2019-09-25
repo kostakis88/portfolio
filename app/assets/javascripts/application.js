@@ -15,10 +15,10 @@
 //= require turbolinks
 //= require popper
 //= require jquery
-//= require bootstrap-sprockets
 //= require jquery-ui
 //= require html5sortable
 //= require cocoon
 //= require gritter
 //= require cable
 //= require_tree .
+//= require bootstrap-sprockets
